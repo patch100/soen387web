@@ -1,0 +1,25 @@
+{
+  "name": "soen387web",
+  "version": "1.0.0",
+  "description": "Soen 387 Web-Enterprise application design",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/.bin/gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PtrWrangler/soen387web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PtrWrangler/soen387web/issues"
+  },
+  "homepage": "https://github.com/PtrWrangler/soen387web#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-cli": "^1.2.2",
+    "gulp-webserver": "^0.9.1"
+  }
+}
