@@ -1,0 +1,22 @@
+{
+  "name": "soen387",
+  "homepage": "https://github.com/PtrWrangler/soen387web",
+  "authors": [
+    "Mohammed Naser <mnaser@vexxhost.com>"
+  ],
+  "description": "soen387 project",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "crypto-js": "^3.1.7"
+  }
+}
