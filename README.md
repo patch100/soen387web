@@ -18,4 +18,4 @@ You'll need to make sure to run this in the root of your project.  This will
 install all the dependencies (`npm install`) and start the server (`npm run`).
 
   $ npm install
-  $ npm run
+  $ npm start
