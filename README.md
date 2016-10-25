@@ -15,7 +15,7 @@ the project.
 
 # Running the project
 You'll need to make sure to run this in the root of your project.  This will
-install all the dependencies (`npm install`) and start the server (`npm run`).
+install all the dependencies (`npm install`) and start the server (`npm start`).
 
   $ npm install
   $ npm start

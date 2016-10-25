@@ -57,10 +57,10 @@
                         <a href="view.html">View</a>
                     </li>
                     <li>
-                        <a href="#contact">Change</a>
+                        <a href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="#contact">Cancel</a>
+                        <a href="#contact">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -144,7 +144,14 @@
     <script type="text/javascript">
     var calendar = $("#calendar").calendar({
       tmpl_path: "/bower_components/bootstrap-calendar/tmpls/",
-      events_source: function () { return []; }
+      events_source: [{
+            "id": 293,
+            "title": "Event 1",
+            "url": "http://example.com",
+            "class": "event-important",
+            "start": 12039485678000, // Milliseconds
+            "end": 1234576967000 // Milliseconds
+        }]
     });
 
     $('.btn-group button[data-calendar-nav]').each(function() {
