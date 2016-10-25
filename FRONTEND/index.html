@@ -48,16 +48,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">Reserve</a>
+                        <a href="EventCreation.html">Reserve</a>
                     </li>
                     <li>
-                        <a href="#services">View</a>
+                        <a href="view.html">View</a>
                     </li>
                     <li>
-                        <a href="#contact">Change</a>
+                        <a href="#">Change</a>
                     </li>
                     <li>
-                        <a href="#contact">Cancel</a>
+                        <a href="#">Cancel</a>
                     </li>
                 </ul>
             </div>
@@ -74,29 +74,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-						<h1>Login</h1>
-						<br/>
-						<br/>
-						<form id="login" method="post" role="form" class="form-horizontal" action="">
-							<div class="form-group">
-								<label class="control-label col-sm-4" for="username">User Name :</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" id="username" name="username" placeholder="Username" value="" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="password" class="control-label col-sm-4">Password :</label>
-								<div class="col-sm-4">
-									<input type="password" class="form-control" id="password" name="password" placeholder="Password" value="" required>
-								</div>
-							</div>
-							<hr class="intro-divider">
-							<div class="form-group">
+                        <h1>Login</h1>
+                        <br/>
+                        <br/>
+                        <form id="login" method="post" role="form" class="form-horizontal" action="">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4" for="username">User Name :</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label col-sm-4">Password :</label>
+                                <div class="col-sm-4">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="" required>
+                                </div>
+                            </div>
+                            <hr class="intro-divider">
+                            <div class="form-group">
                                 <!-- add hashing of password -->
-								<button type="submit" class="btn btn-success" id="login_button">Log in</button>
-								<button type="button" id="changePassword" class="btn btn-primary col-xs-offset-2" onclick="location.href = 'forgotPassword.html'">Forgot Password</button>
-							</div>
-						</form>
+                                <button type="submit" class="btn btn-success" id="login_button">Log in</button>
+                                <button type="button" id="changePassword" class="btn btn-primary col-xs-offset-2" onclick="location.href = 'forgotPassword.html'">Forgot Password</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -148,23 +148,24 @@
     <script src="bower_components/crypto-js/crypto-js.js"></script>
 
     <script>
-	
-	$(document).ready(function() {
+
+    $(document).ready(function() {
         $("#login_button").click(function(event) {
             // popup window for safari users
-			if ($("#password").val() == "" || $("#username").val() == "")
-			{
-				alert("Please fill in all fields");
-				event.preventDefault();
-			}
-			else
-			{
-				var password = $("#password").val();
-				// hash password using 256
-				var hashedPassword = CryptoJS.SHA256(password);
-				var message = "Password: " + password + "\n" + "Hashed: " + hashedPassword;
-				alert(message);
-			}
+            if ($("#password").val() == "" || $("#username").val() == "")
+            {
+                alert("Please fill in all fields");
+                event.preventDefault();
+            }
+            else
+            {
+                var password = $("#password").val();
+                // hash password using 256
+                var hashedPassword = CryptoJS.SHA256(password);
+                var message = "Password: " + password + "\n" + "Hashed: " + hashedPassword;
+                alert(message);
+            }
+
         });
     });
 
