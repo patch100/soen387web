@@ -12,3 +12,10 @@ please make sure to run the following to download all the dependencies:
 
 This will download all the dependencies and install the libraries necessary for
 the project.
+
+# Running the project
+You'll need to make sure to run this in the root of your project.  This will
+install all the dependencies (`npm install`) and start the server (`npm start`).
+
+  $ npm install
+  $ npm start

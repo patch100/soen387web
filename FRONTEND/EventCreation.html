@@ -49,16 +49,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Home</a>
+                <a class="navbar-brand topnav" href="index.html">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">Reserve</a>
+                        <a href="EventCreation.html">Reserve</a>
                     </li>
                     <li>
-                        <a href="#services">View</a>
+                        <a href="view.html">View</a>
                     </li>
                     <li>
                         <a href="#contact">Change</a>
@@ -87,22 +87,69 @@
     <div class="form-group">
     <div style="text-align:center;font-size:150%"><label>Event Info</label><br/></div>
     <label for="eventnName">Name:</label>
-    <input type="text" class="form-control" id="eventName" placeholder="Event Title">
+    <input type="text" class="form-control" id="eventName" placeholder="Event Title" required>
   </div>
   <div class="form-group">
     <label for="eventURL">URL:</label>
     <input type="text" class="form-control" id="eventURL" placeholder="Optional">
   </div>
+
+    <br />
     <div class="form-group">
-        <label for="dateTime">Time and Date:</label>
+        <label for="startTime">Start Time:</label>
   
-            <input type='text' class="form-control" id='datetimepicker4' />
+            <input type='text' class="form-control" id='starttimepicker' required/>
    
-        </div>
-  <button type="submit" class="btn btn-default btn-submit">Submit</button>
+    </div>
+    <div class="form-group">
+    <label for="endTime">End Time:</label>
+
+        <input type='text' class="form-control" id='endtimepicker' required/>
+
+    </div>
+    
+    
+        
+    <span style="color:red;">Dev Note: </span>start/end times chosen first, then available resources displayed
+    <br />  <br />  
+    <div class="lst-resource">
+    <label for="ResRoom">Rooms to Reserve:</label><br />
+    <select class="form-group list-wrapper" id="ResRoom" name="Rooms" size="5" multiple>
+    <option class="form-control" value="" >Board Room</option>
+    <option class="form-control" value="" >Classroom</option>
+    <option class="form-control" value="">Bathroom</option>
+    <option class="form-control" value="" selected>Conference Room</option>
+    <option class="form-control" value="" selected>Lunch Room</option>
+    <option class="form-control" value="" selected>Parking Lot</option>
+    </select>
+    </div>
+    <div class="lst-resource">
+    <label for="ResTool">Tools to Reserve:</label><br />
+    <select class="form-group list-wrapper" id="ResTool" name="Tools" size="5" multiple>
+    <option class="form-control" value="">Projector</option>
+    <option class="form-control" value="" selected>Smart board</option>
+    <option class="form-control" value="">TV</option>
+    <option class="form-control" value="">Laptop</option>
+    <option class="form-control" value="" selected>Office Chairs</option>
+    <option class="form-control" value="" selected>Radio</option>
+    </select>
+    </div>
+    <div class="lst-resource">
+    <label for="ResEmp">People to Book</label><br />
+    <select class="form-group list-wrapper" id="ResEmp" name="Tools" size="5" multiple>
+    <option class="form-control" value="" selected>President Roger</option>
+    <option class="form-control" value="" selected>IT guy Josh</option>
+    <option class="form-control" value="">Salesman Daniel</option>
+    <option class="form-control" value="">Consultant Steven</option>
+    <option class="form-control" value="">Janitor Bob</option>
+    <option class="form-control" value="" selected>Finance Janice</option>
+    </select>
+    </div>
+  <button type="submit" class="btn btn-default btn-submit" id="submit_button">Submit</button>
   <button type="reset" class="btn btn-default">Reset</button>
   <button type="button" class="btn btn-default btn-delete">Delete</button>
     </div>
+    
 </form>
 
                 </div>
@@ -160,19 +207,27 @@
 
       <script type="text/javascript">
             $(function () {
-                $('#datetimepicker4').datetimepicker();
+                $('#starttimepicker').datetimepicker();
+            });
+            $(function () {
+                $('#endtimepicker').datetimepicker();
             });
         </script>
     
     <script>
 
     $(document).ready(function() {
-        $("#login_button").click(function() {
-            var password = $("#password").val();
-            // hash password using 256
-            var hashedPassword = CryptoJS.SHA256(password);
-            var message = "Password: " + password + "\n" + "Hashed: " + hashedPassword;
-            alert(message);
+        $("#submit_button").click(function(event) {
+            // popup window for safari users
+			if ($("#eventName").val() == "" || $("#datetimepicker4").val() == "")
+			{
+				alert("Please fill in all fields");
+				event.preventDefault();
+			}
+            else
+            {
+                alert($("#eventName").val() + '\n' + $("#eventURL").val() + '\n' + $("#datetimepicker4").val());
+            }
         });
     });
 
