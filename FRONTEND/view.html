@@ -144,14 +144,63 @@
     <script type="text/javascript">
     var calendar = $("#calendar").calendar({
       tmpl_path: "/bower_components/bootstrap-calendar/tmpls/",
-      events_source: [{
-            "id": 293,
-            "title": "Event 1",
-            "url": "http://example.com",
-            "class": "event-important",
-            "start": 12039485678000, // Milliseconds
-            "end": 1234576967000 // Milliseconds
-        }]
+      events_source: function () { return [{
+           "id": 293,
+           "title": "Event 1",
+           "url": "http://example.com",
+           "class": "event-important",
+           "start": 1477627200000, // Milliseconds
+           "end": 1477713600000 // Milliseconds
+       }, {
+            "id": "292",
+            "title": "This is warning class event with very long title to check how it fits to evet in day view",
+            "url": "http://www.example.com/",
+            "class": "event-warning",
+            "start": "1476799200000",
+            "end":   "1476885600000"
+        },{
+            "id": "297",
+            "title": "This is success event",
+            "url": "http://www.example.com/",
+            "class": "event-success",
+            "start": "1477072800000",
+            "end":   "1477080000000"
+        },{
+            "id": "293",
+            "title": "This is an info event",
+            "url": "http://www.example.com/",
+            "class": "event-info",
+            "start": "1475524800000",
+            "end":   "1475528400000"
+        }, {
+            "id": "548",
+            "title": "This is special event",
+            "url": "http://www.example.com/",
+            "class": "event-special",
+            "start": "1476133200000",
+            "end":   "1476306000000"
+        }, {
+            "id": "54",
+            "title": "This is simple event",
+            "url": "http://www.example.com/",
+            "class": "",
+            "start": "1476306000000",
+            "end":   "1476392400000"
+        }, {
+            "id": "532",
+            "title": "This is inverse event",
+            "url": "http://www.example.com/",
+            "class": "event-inverse",
+            "start": "1476536400000",
+            "end":   "1476572400000"
+    },{
+           "id": 294,
+           "title": "Event 2",
+           "url": "http://example.com",
+           "class": "event-important",
+           "start": 1476590400000, // Milliseconds
+           "end": 1476763200000 // Milliseconds
+       }]; }
     });
 
     $('.btn-group button[data-calendar-nav]').each(function() {
